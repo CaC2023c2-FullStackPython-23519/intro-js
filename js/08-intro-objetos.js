@@ -1,22 +1,28 @@
-// PARADIGMA ORIENTADA A OBJETOS
-
-let nombre = "Carlos"
-let edad = 30
-let tieneHijos = false
+// PARADIGMA ORIENTADO A OBJETOS
 
 let persona = {
     nombre: "Carlos",
-    edad: 30,
+    anioDeNacimiento: 1993,
+    perra: {
+        nombre: "Lara",
+        edad: 5
+    },
     tieneHijos: false,
     saludar: function () {
-        console.log(`Hola soy ${this.nombre} y mi edad es de ${this.edad} años`)
+        console.log(`Hola soy ${this.nombre.toUpperCase()} y tengo ${this.edad()} años. Tengo una perra que se llama ${this.perra.nombre}`)
+    },
+    edad: function() {
+        return 2023 - this.anioDeNacimiento
     }
 }
 
 let persona2 = {
     nombre: "Carlos",
-    edad: 30,
-    correr: function() {}
+    tieneHijos: false,
+    colorDeOjos: "Verde",
+    saludar: function () {
+        console.log(`Hola soy ${this.nombre.toUpperCase()} y tengo ${this.edad()} años. Tengo una perra que se llama ${this.perra.nombre}`)
+    },
 }
 
-let elProfeDePython = persona
+let elProfeDePython = persona;
