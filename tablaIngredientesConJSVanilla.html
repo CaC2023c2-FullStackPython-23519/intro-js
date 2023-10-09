@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: rgb(29, 29, 29);
+            color: white;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid rgb(255, 255, 255);
+            border-collapse: collapse;
+        }
+
+        td>img {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="filtrador">
+        <label>Color: </label>
+        <input id="inputColor" type="text" onkeyup="handlerFiltrarPorColor()">
+    </div>
+    <hr>
+    <div id="tablaDeIngredientesContainer">
+        <table>
+            <tbody>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Foto</th>
+                    <th>Color</th>
+                </tr>
+            </tbody>
+        </table>
+        <p>Oooops, no hay ingredientes...</p>
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/tablaIngredientesConJSVanilla.js"></script>
+</body>
+
+</html>
