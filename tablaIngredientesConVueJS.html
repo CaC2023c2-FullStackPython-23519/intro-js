@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: rgb(29, 29, 29);
+            color: white;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid rgb(255, 255, 255);
+            border-collapse: collapse;
+        }
+
+        td>img {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div id="filtrador">
+            <label>Color: </label>
+            <input type="text" @keyup="handlerFiltrarPorColor" v-model="colorIngresado">
+        </div>
+        <hr>
+        <div id="tablaDeIngredientesContainer">
+            <table v-if="listaDeIngredientes.length !== 0">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Foto</th>
+                    <th>Color</th>
+                </tr>
+                <tr v-for="ing in listaDeIngredientes">
+                    <td :style="`color:${ing.color}`">{{ing.nombre}}</td>
+                    <td><img :src="`img/${ing.foto}`" :alt="ing.nombre"></td>
+                    <td>{{ing.color}}</td>
+                </tr>
+            </table>
+            <p v-else>Oooops, no hay ingredientes...</p>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/tablaIngredientesConVueJS.js"></script>
+</body>
+
+</html>
